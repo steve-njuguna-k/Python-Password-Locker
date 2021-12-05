@@ -12,6 +12,9 @@ def create_new_user(username, password):
 def save_users(user):
     user.save_user()
 
+def delete_saved_user(user):
+    user.delete_user()
+
 def display_login_details():
     return User.display_user()
 
@@ -25,8 +28,24 @@ def save_new_credential(credential):
 def display_credential_details():
     return Credentials.display_credentials()
 
+def delete_saved_credential(credential):
+    credential.delete_credentials()
+
 def auto_generate_password():
     return Credentials.generate_password()
+
+def verify_user(user):
+    return User.verify_user_exists(user)
+
+def verify_cred(credential):
+    return Credentials.verify_credential_exist(credential)
+
+def search_user(user):
+    return User.search_saved_user(user)
+
+def search_cred(credential):
+    return Credentials.search_saved_credential(credential)
+
 
 def passlocker():
     print("------------------------------------------------------------------------------------------------------------------------ ")
@@ -94,7 +113,6 @@ def passlocker():
                     print("DS - Display All Saved Credentials")
                     print("FC - Find Credential")
                     print("DC - Delete A Saved Credential")
-                    print("DA - Delete Entire Account")
                     print("LO - Logout Application")
                     print("\n")
                     option = input("Your Choice: ").upper()
@@ -147,15 +165,37 @@ def passlocker():
                                 print("\n")
                         else:
                             print("No Credentials Found!")
+                            print("\n")
 
                     elif option == 'DS':
                         pass
 
                     elif option == 'DC':
-                        pass
+                        while True:
+                            print("Are you sure you want to perform this action? (Y/N)\n")
+                            choice = input("Choice: ").upper()
+                            print("\n")
+                            if choice == 'Y':
+                                delete_credential = input("Enter Platform Name: ")
+                                if verify_cred(delete_credential):
+                                    search = search_cred(delete_credential)
+                                    delete_saved_credential(search)
+                                    print("\n")
+                                    print("*************************************************")
+                                    print(f"You have sucessfully deleted the {delete_credential} account!")
+                                    print("*************************************************")
+                                    print("\n")
+                                else:
+                                    print("\n")
+                                    print("The Credential Doesn't Exist!")
+                                    print("\n")
+                                    break
+                                break
 
-                    elif option == 'DA':
-                        pass
+                            elif choice == 'N':
+                                break
+                            else:
+                                print("Wrong option! Try again")
 
                     elif option == 'LO':
                         print("************************")

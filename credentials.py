@@ -27,14 +27,14 @@ class Credentials:
         return password
 
     @classmethod
-    def verify_credentials_exist(cls, accountName):
+    def verify_credential_exist(cls, accountName):
         for credential in cls.credentials_list:
             if credential.accountName == accountName:
                 return True
             return False
 
     @classmethod
-    def search_credentials(cls, accountName):
+    def search_saved_credential(cls, accountName):
         for credential in cls.credentials_list:
             if credential.accountName == accountName:
                 return credential
