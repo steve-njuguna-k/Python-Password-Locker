@@ -91,7 +91,8 @@ def passlocker():
                     print("Please choose one of the following shortcodes to get continue:")
                     print("NC - Create A New Credential")
                     print("LD - Display Login Detials")
-                    print("DS - Display Saved Credentials")
+                    print("DS - Display All Saved Credentials")
+                    print("FC - Find Credential")
                     print("DC - Delete A Saved Credential")
                     print("DA - Delete Entire Account")
                     print("LO - Logout Application")
@@ -147,7 +148,13 @@ def passlocker():
                         else:
                             print("No Credentials Found!")
 
+                    elif option == 'DS':
+                        pass
+
                     elif option == 'DC':
+                        pass
+
+                    elif option == 'DA':
                         pass
 
                     elif option == 'LO':
