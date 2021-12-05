@@ -22,6 +22,9 @@ def create_new_credential(accountName, accountUsername, accountPassword):
 def save_new_credential(credential):
     credential.save_credentials()
 
+def display_credential_details():
+    return Credentials.display_credentials()
+
 def passlocker():
     print("------------------------------------------------------------------------------------------------------------------------ ")
     print("██████╗░░█████╗░░██████╗░██████╗░██╗░░░░░░░██╗░█████╗░██████╗░██████╗░  ██╗░░░░░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░ ")
