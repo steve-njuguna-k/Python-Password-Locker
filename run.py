@@ -1,6 +1,6 @@
 from user import User
 
-def login(username, password):
+def login_user(username, password):
     check_user =  User.verify_user(username, password)
     return check_user
 
@@ -57,7 +57,19 @@ def passlocker():
                 print("You can log in. Choose LG to proceed\n")
                 
         elif option == 'LG':
-            pass
+            print("LOG IN")
+            print("******")
+            username = input("Enter a username: ")
+            password = input("Enter a password: ")
+            login = login_user(username, password)
+            while True:
+                if login:
+                    print("\n")
+                    print("**************************************************************")
+                    print("Login Successful!! Welcome Back To Password Locker", username)
+                    print("**************************************************************")
+                    print("\n")
+                    break
 
         elif option == 'EX':
             print("***********************************")
