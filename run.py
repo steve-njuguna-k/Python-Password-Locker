@@ -25,6 +25,9 @@ def save_new_credential(credential):
 def display_credential_details():
     return Credentials.display_credentials()
 
+def auto_generate_password():
+    return Credentials.generate_password()
+
 def passlocker():
     print("------------------------------------------------------------------------------------------------------------------------ ")
     print("██████╗░░█████╗░░██████╗░██████╗░██╗░░░░░░░██╗░█████╗░██████╗░██████╗░  ██╗░░░░░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░ ")
@@ -101,23 +104,28 @@ def passlocker():
                         print("**************")
                         accountName = input("Enter the platform name: ")
                         accountUsername = input("Enter the username: ")
-                        accountPassword = input("Enter the password: ")
-                        confirm_password = input("Confirm your password: ")
-                        save_new_credential(create_new_credential(accountName, accountUsername, accountPassword))
+                        print("Select one of the following:")
+                        print("EP - For enter password")
+                        print("GP - For Auto Generate password")
+                        choice = input("Choice: ").upper()
 
-                        while accountPassword != confirm_password:
-                            print("\n")
-                            print("Password Mismatch! Please Try Again")
-                            password = input("Enter the password: ")
-                            confirm_password = input("Confirm password: ")
-                        
+                        if choice == 'EP':
+                            accountPassword = input("Enter the password: ")
+                        elif choice == 'GP':
+                            accountPassword = auto_generate_password()
                         else:
                             print("\n")
-                            print("************************************************************")
-                            print("New Credential Added Successfully!! Your Crednetial Details:")
-                            print("************************************************************")
-                            print("Platform Name: ", accountName ,"\nUsername: ", accountUsername ,"\nPassword: ", accountPassword)
+                            print("Wrong Option! Please Try Again.")
                             print("\n")
+                            break
+
+                        save_new_credential(create_new_credential(accountName, accountUsername, accountPassword))
+                        print("\n")
+                        print("************************************************************")
+                        print("New Credential Added Successfully!! Your Crednetial Details:")
+                        print("************************************************************")
+                        print("Platform Name: ", accountName ,"\nUsername: ", accountUsername ,"\nPassword: ", accountPassword)
+                        print("\n")
 
                     elif option == 'LD':
                         if display_login_details():
