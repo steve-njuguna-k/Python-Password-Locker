@@ -122,15 +122,22 @@ def passlocker():
                     elif option == 'LD':
                         if display_login_details():
                             for details in display_login_details():
-                                print("Account Details")
+                                print("Log In Details")
                                 print("***************")
                                 print(f"Username: {details.username} \nPassword: {details.password}")
                                 print("\n")
                         else:
-                            print("Something went utterly wrong!")
+                            print("No Login Details Found!")
 
                     elif option == 'DS':
-                        pass
+                        if display_credential_details():
+                            for details in display_credential_details():
+                                print("Account Credentials Details")
+                                print("***************************")
+                                print(f"Platfrom Name: {details.accountName} \nAccount Username: {accountUsername} \nPassword: {details.accountPassword}")
+                                print("\n")
+                        else:
+                            print("No Credentials Found!")
 
                     elif option == 'DC':
                         pass
