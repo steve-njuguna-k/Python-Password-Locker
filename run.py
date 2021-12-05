@@ -1,4 +1,5 @@
 from user import User
+from credentials import Credentials
 
 def login_user(username, password):
     check_user =  User.verify_user(username, password)
@@ -13,6 +14,10 @@ def save_users(user):
 
 def display_login_details():
     return User.display_user()
+
+def create_new_credentials(accountName, accountUsername, accountPassword):
+    new_credential = Credentials(accountName, accountUsername, accountPassword)
+    return new_credential
 
 def passlocker():
     print("------------------------------------------------------------------------------------------------------------------------ ")
