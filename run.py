@@ -69,6 +69,44 @@ def passlocker():
                     print("Login Successful!! Welcome Back To Password Locker", username)
                     print("**************************************************************")
                     print("\n")
+                    print("Dashboard Menu")
+                    print("**************")
+                    print("Please choose one of the following shortcodes to get continue:")
+                    print("NC - Create A New Credential")
+                    print("LD - Display Login Detials")
+                    print("DS - Display Saved Credentials")
+                    print("DC - Delete A Saved Credential")
+                    print("DA - Delete Entire Account")
+                    print("LO - Logout Application")
+                    print("\n")
+                    option = input("Your Choice: ").upper()
+                    print("\n")
+
+                    if option == 'NC':
+                        pass
+
+                    elif option == 'LD':
+                        pass
+
+                    elif option == 'DS':
+                        pass
+
+                    elif option == 'DC':
+                        pass
+
+                    elif option == 'LO':
+                        print("************************")
+                        print("Successfully Logged Out!")
+                        print("************************")
+                        print("\n")
+                        break
+
+                    else:
+                        print("Wrong Option! Please Try Again.")
+                        print("\n")
+                
+                else:
+                    print("\nYou Need An Account To Continue\n")
                     break
 
         elif option == 'EX':
