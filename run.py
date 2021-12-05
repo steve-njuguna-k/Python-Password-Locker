@@ -2,46 +2,58 @@ from user import User
 from credentials import Credentials
 
 def login_user(username, password):
+    '''Function used to log in a saved user into the password locker'''
     check_user =  User.verify_user(username, password)
     return check_user
 
 def create_new_user(username, password):
+    '''Function to create a new user account'''
     new_user = User(username, password)
     return new_user
 
 def save_users(user):
+    '''Function to save a new user'''
     user.save_user()
 
 def delete_saved_user(user):
+    '''Function to delete a saved user'''
     user.delete_user()
 
 def display_login_details():
+    '''Function to display log in details'''
     return User.display_user()
 
 def create_new_credential(accountName, accountUsername, accountPassword):
+    '''Function for creating new credential info'''
     new_credential = Credentials(accountName, accountUsername, accountPassword)
     return new_credential
 
 def save_new_credential(credential):
+    '''Function to save new credential info'''
     credential.save_credentials()
 
 def display_credential_details():
+    '''Function to display credential info'''
     return Credentials.display_credentials()
 
 def delete_saved_credential(credential):
+    '''Function to delete saved credential information'''
     credential.delete_credentials()
 
 def auto_generate_password():
+    '''Function to auto generate paswword'''
     return Credentials.generate_password()
 
 def verify_cred(credential):
+    '''Function to verify credential info exists'''
     return Credentials.verify_credential_exist(credential)
 
 def search_cred(credential):
+    '''Function to search for saved credentials'''
     return Credentials.search_saved_credential(credential)
 
-
 def passlocker():
+    '''Main function for the password locker application'''
     print("------------------------------------------------------------------------------------------------------------------------ ")
     print("██████╗░░█████╗░░██████╗░██████╗░██╗░░░░░░░██╗░█████╗░██████╗░██████╗░  ██╗░░░░░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░ ")
     print("██╔══██╗██╔══██╗██╔════╝██╔════╝░██║░░██╗░░██║██╔══██╗██╔══██╗██╔══██╗  ██║░░░░░██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗ ")
