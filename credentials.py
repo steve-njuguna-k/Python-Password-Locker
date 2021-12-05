@@ -6,7 +6,7 @@ class Credentials:
 
     def __init__(self, accountName, accountUsername, accountPassword):
         self.accountName = accountName
-        self.accoutnUsername = accountUsername
+        self.accountUsername = accountUsername
         self.accountPassword = accountPassword
 
     def save_credentials(self):

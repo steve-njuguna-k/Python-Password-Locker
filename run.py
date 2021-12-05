@@ -161,14 +161,29 @@ def passlocker():
                             for details in display_credential_details():
                                 print("Account Credentials Details")
                                 print("***************************")
-                                print(f"Platfrom Name: {details.accountName} \nAccount Username: {accountUsername} \nPassword: {details.accountPassword}")
+                                print(f"Platfrom Name: {details.accountName} \nAccount Username: {details.accountUsername} \nPassword: {details.accountPassword}")
                                 print("\n")
                         else:
                             print("No Credentials Found!")
                             print("\n")
 
-                    elif option == 'DS':
-                        pass
+                    elif option == 'FC':
+                        while True:
+                            platform_name = input("Enter Platform Name: ")
+                            print("\n")
+                            if verify_cred(platform_name):
+                                search = search_cred(platform_name)
+                                for search in display_credential_details():
+                                    print("Account Credentials Details")
+                                    print("***************************")
+                                    print(f"Platfrom Name: {search.accountName} \nAccount Username: {search.accountUsername} \nPassword: {search.accountPassword}")
+                                    print("\n")
+                            else:
+                                print("\n")
+                                print("The Credential Doesn't Exist!")
+                                print("\n")
+                                break
+                            break
 
                     elif option == 'DC':
                         while True:
