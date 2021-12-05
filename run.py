@@ -34,14 +34,8 @@ def delete_saved_credential(credential):
 def auto_generate_password():
     return Credentials.generate_password()
 
-def verify_user(user):
-    return User.verify_user_exists(user)
-
 def verify_cred(credential):
     return Credentials.verify_credential_exist(credential)
-
-def search_user(user):
-    return User.search_saved_user(user)
 
 def search_cred(credential):
     return Credentials.search_saved_credential(credential)
@@ -158,9 +152,9 @@ def passlocker():
 
                     elif option == 'DS':
                         if display_credential_details():
+                            print("Account Credentials Details")
+                            print("***************************")
                             for details in display_credential_details():
-                                print("Account Credentials Details")
-                                print("***************************")
                                 print(f"Platfrom Name: {details.accountName} \nAccount Username: {details.accountUsername} \nPassword: {details.accountPassword}")
                                 print("\n")
                         else:
@@ -168,22 +162,18 @@ def passlocker():
                             print("\n")
 
                     elif option == 'FC':
-                        while True:
-                            platform_name = input("Enter Platform Name: ")
+                        platform_name = input("Enter Platform Name: ")
+                        print("\n")
+                        if verify_cred(platform_name):
+                            search = search_cred(platform_name)
+                            print("Account Credentials Details")
+                            print("***************************")
+                            print(f"Platfrom Name: {search.accountName} \nAccount Username: {search.accountUsername} \nPassword: {search.accountPassword}")
                             print("\n")
-                            if verify_cred(platform_name):
-                                search = search_cred(platform_name)
-                                for search in display_credential_details():
-                                    print("Account Credentials Details")
-                                    print("***************************")
-                                    print(f"Platfrom Name: {search.accountName} \nAccount Username: {search.accountUsername} \nPassword: {search.accountPassword}")
-                                    print("\n")
-                            else:
-                                print("\n")
-                                print("The Credential Doesn't Exist!")
-                                print("\n")
-                                break
-                            break
+                        else:
+                            print("\n")
+                            print("The Credential Doesn't Exist!")
+                            print("\n")
 
                     elif option == 'DC':
                         while True:
