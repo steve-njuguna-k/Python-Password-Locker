@@ -22,5 +22,28 @@ def passlocker():
     print("------------------------------------------------------------------------------------------------------------------------ ")
     print("\n")
 
+    print("Welcome To Password Locker")
+    print("**************************")
+    while True:
+        print("Please choose one of the following shortcodes to continue:")
+        print("NA - Create A New Account")
+        print("LG - Login To Your Account")
+        print("EX - Exit Application")
+        print("\n")
+        option = input("Your Choice: ").upper()
+        print("\n")
+
+        if option == 'NA':
+            pass
+                
+        elif option == 'LG':
+            pass
+
+        elif option == 'EX':
+            pass
+
+        else:
+            print("Wrong Option! Please Try Again.")
+
 if __name__ == '__main__':
     passlocker()
