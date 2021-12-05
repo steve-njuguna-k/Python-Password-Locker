@@ -97,7 +97,27 @@ def passlocker():
                     print("\n")
 
                     if option == 'NC':
-                        pass
+                        print("NEW CREDENTIAL")
+                        print("**************")
+                        accountName = input("Enter the platform name: ")
+                        accountUsername = input("Enter the username: ")
+                        accountPassword = input("Enter the password: ")
+                        confirm_password = input("Confirm your password: ")
+                        save_new_credential(create_new_credential(accountName, accountUsername, accountPassword))
+
+                        while accountPassword != confirm_password:
+                            print("\n")
+                            print("Password Mismatch! Please Try Again")
+                            password = input("Enter the password: ")
+                            confirm_password = input("Confirm password: ")
+                        
+                        else:
+                            print("\n")
+                            print("************************************************************")
+                            print("New Credential Added Successfully!! Your Crednetial Details:")
+                            print("************************************************************")
+                            print("Platform Name: ", accountName ,"\nUsername: ", accountUsername ,"\nPassword: ", accountPassword)
+                            print("\n")
 
                     elif option == 'LD':
                         if display_login_details():
