@@ -1,3 +1,6 @@
+import string
+from random import choice
+
 class Credentials:
     credentials_list = []
 
@@ -15,3 +18,10 @@ class Credentials:
     @classmethod
     def display_credentials(cls):
         return cls.credentials_list
+
+    @classmethod
+    def generate_password(cls):
+        characters = string.ascii_letters + string.digits
+        password = "".join(choice(characters) for x in range(0,16))
+        cls.password = password
+        return password
