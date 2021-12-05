@@ -1,5 +1,8 @@
 import string
 from random import choice
+import pyperclip
+
+from run import search_cred
 
 class Credentials:
     '''Credential list for storing new credential information'''
@@ -46,3 +49,9 @@ class Credentials:
         for credential in cls.credentials_list:
             if credential.accountName == accountName:
                 return credential
+
+    @classmethod
+    def copy_credentials(cls, accountName):
+        '''Function to copy credential info onto the clipboard'''
+        credentials_info = Credentials.search_saved_credential(accountName)
+        pyperclip.copy(credentials_info.accountName + "\n" + credentials_info.accountUsername + "\n" + credentials_info.accountPassword)
