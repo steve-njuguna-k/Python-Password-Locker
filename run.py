@@ -52,6 +52,10 @@ def search_cred(credential):
     '''Function to search for saved credentials'''
     return Credentials.search_saved_credential(credential)
 
+def copy_cred(credential):
+    '''Function to copy credential info into clipboard'''
+    return Credentials.copy_credentials(credential)
+
 def passlocker():
     '''Main function for the password locker application'''
     print("------------------------------------------------------------------------------------------------------------------------ ")
@@ -118,6 +122,7 @@ def passlocker():
                     print("LD - Display Login Detials")
                     print("DS - Display All Saved Credentials")
                     print("FC - Find Credential")
+                    print("CC - Copy Credential To Clipboard")
                     print("DC - Delete A Saved Credential")
                     print("LO - Logout Application")
                     print("\n")
@@ -181,6 +186,21 @@ def passlocker():
                             print("Account Credentials Details")
                             print("***************************")
                             print(f"Platfrom Name: {search.accountName} \nAccount Username: {search.accountUsername} \nPassword: {search.accountPassword}")
+                            print("\n")
+                        else:
+                            print("\n")
+                            print("The Credential Doesn't Exist!")
+                            print("\n")
+
+                    elif option == 'CC':
+                        platform_name = input("Enter Platform Name: ")
+                        print("\n")
+                        if verify_cred(platform_name):
+                            cred = copy_cred(platform_name)
+                            print("\n")
+                            print("*****************************************")
+                            print(f"Copied To Clipboard. Paste It Somewhere!")
+                            print("*****************************************")
                             print("\n")
                         else:
                             print("\n")
