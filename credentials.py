@@ -5,3 +5,6 @@ class Credentials:
         self.accountName = accountName
         self.accoutnUsername = accountUsername
         self.accountPassword = accountPassword
+
+    def save_credentials(self):
+        Credentials.credentials_list.append(self)
