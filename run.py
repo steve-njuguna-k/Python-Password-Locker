@@ -60,10 +60,15 @@ def passlocker():
             pass
 
         elif option == 'EX':
-            pass
+            print("***********************************")
+            print("Thank You For Using Password Locker")
+            print("***********************************")
+            print("\n")
+            break
 
         else:
             print("Wrong Option! Please Try Again.")
+            print("\n")
 
 if __name__ == '__main__':
     passlocker()
