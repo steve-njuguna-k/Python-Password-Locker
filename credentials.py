@@ -25,3 +25,16 @@ class Credentials:
         password = "".join(choice(characters) for x in range(0,16))
         cls.password = password
         return password
+
+    @classmethod
+    def verify_credentials_exist(cls, accountName):
+        for credential in cls.credentials_list:
+            if credential.accountName == accountName:
+                return True
+            return False
+
+    @classmethod
+    def search_credentials(cls, accountName):
+        for credential in cls.credentials_list:
+            if credential.accountName == accountName:
+                return credential
