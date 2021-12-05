@@ -20,3 +20,16 @@ class User:
         for user in cls.user_list:
             if (user.username == username and user.password == password):
                 return user
+
+    @classmethod
+    def verify_user_exists(cls, username):
+        for user in cls.user_list:
+            if user.username == username:
+                return True
+            return False
+
+    @classmethod
+    def search_saved_user(cls, username):
+        for user in cls.user_list:
+            if user.username == username:
+                return user
