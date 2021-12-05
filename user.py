@@ -14,3 +14,9 @@ class User:
     @classmethod
     def display_user(cls):
         cls.user_list
+
+    @classmethod
+    def verify_user(cls, username, password):
+        for user in cls.user_list:
+            if (user.username == username and user.password == password):
+                return user
