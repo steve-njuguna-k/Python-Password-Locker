@@ -11,6 +11,9 @@ def create_new_user(username, password):
 def save_users(user):
     user.save_user()
 
+def display_login_details():
+    return User.display_user()
+
 def passlocker():
     print("------------------------------------------------------------------------------------------------------------------------ ")
     print("██████╗░░█████╗░░██████╗░██████╗░██╗░░░░░░░██╗░█████╗░██████╗░██████╗░  ██╗░░░░░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░ ")
@@ -62,13 +65,13 @@ def passlocker():
             username = input("Enter a username: ")
             password = input("Enter a password: ")
             login = login_user(username, password)
+            print("\n")
+            print("**************************************************************")
+            print("Login Successful!! Welcome Back To Password Locker", username)
+            print("**************************************************************")
+            print("\n")
             while True:
                 if login:
-                    print("\n")
-                    print("**************************************************************")
-                    print("Login Successful!! Welcome Back To Password Locker", username)
-                    print("**************************************************************")
-                    print("\n")
                     print("Dashboard Menu")
                     print("**************")
                     print("Please choose one of the following shortcodes to get continue:")
@@ -86,7 +89,14 @@ def passlocker():
                         pass
 
                     elif option == 'LD':
-                        pass
+                        if display_login_details():
+                            for details in display_login_details():
+                                print("Account Details")
+                                print("***************")
+                                print(f"Username: {details.username} \nPassword: {details.password}")
+                                print("\n")
+                        else:
+                            print("Something went utterly wrong!")
 
                     elif option == 'DS':
                         pass

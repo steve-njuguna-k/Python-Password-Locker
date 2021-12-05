@@ -13,7 +13,7 @@ class User:
 
     @classmethod
     def display_user(cls):
-        cls.user_list
+        return cls.user_list
 
     @classmethod
     def verify_user(cls, username, password):
