@@ -8,6 +8,9 @@ def create_new_user(username, password):
     new_user = User(username, password)
     return new_user
 
+def save_users(user):
+    user.save_user()
+
 def passlocker():
     print("------------------------------------------------------------------------------------------------------------------------ ")
     print("██████╗░░█████╗░░██████╗░██████╗░██╗░░░░░░░██╗░█████╗░██████╗░██████╗░  ██╗░░░░░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░ ")
