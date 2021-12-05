@@ -15,9 +15,12 @@ def save_users(user):
 def display_login_details():
     return User.display_user()
 
-def create_new_credentials(accountName, accountUsername, accountPassword):
+def create_new_credential(accountName, accountUsername, accountPassword):
     new_credential = Credentials(accountName, accountUsername, accountPassword)
     return new_credential
+
+def save_new_credential(credential):
+    credential.save_credentials()
 
 def passlocker():
     print("------------------------------------------------------------------------------------------------------------------------ ")
