@@ -34,7 +34,27 @@ def passlocker():
         print("\n")
 
         if option == 'NA':
-            pass
+            print("REGISTER")
+            print("********")
+            username = input("Enter a username: ")
+            password = input("Enter a password: ")
+            confirm_password = input("Confirm password: ")
+            save_users(create_new_user(username, password))
+            
+            while password != confirm_password:
+                print("\n")
+                print("Password Mismatch! Please Try Again")
+                password = input("Enter a password: ")
+                confirm_password = input("Confirm password: ")
+            
+            else:
+                print("\n")
+                print("********************************************************************")
+                print("Registration Successful!! Welcome Aboard. Your Registration Details:")
+                print("********************************************************************")
+                print("Username: ", username, "\nPassword: ", password)
+                print("\n")
+                print("You can log in. Choose LG to proceed\n")
                 
         elif option == 'LG':
             pass
