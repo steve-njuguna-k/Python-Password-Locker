@@ -21,8 +21,10 @@ class TestUser(unittest.TestCase):
         self.assertEqual(len(User.user_list),1)
 
     def test_displayUser(self):
-        pass
-
+        '''test if display user is working correctly'''
+        test_user = User("Steve", "12345")
+        test_user.save_user()
+        self.assertEqual(User.display_user(), User.user_list)
 
 if __name__ == '__main__':
     unittest.main()
