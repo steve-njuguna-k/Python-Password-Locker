@@ -16,7 +16,9 @@ class TestUser(unittest.TestCase):
         User.user_list = []
 
     def test_saveUser(self):
-        pass
+        ''''we save user then assert if it exist in  user list'''
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)
 
     def test_displayUser(self):
         pass
