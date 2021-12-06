@@ -44,13 +44,13 @@ def auto_generate_password():
     '''Function to auto generate paswword'''
     return Credentials.generate_password()
 
-def verify_cred(credential):
+def verify_cred(value):
     '''Function to verify credential info exists'''
-    return Credentials.verify_credential_exist(credential)
+    return Credentials.verify_credential_exist(value)
 
-def search_cred(credential):
+def search_cred(accountName):
     '''Function to search for saved credentials'''
-    return Credentials.search_saved_credential(credential)
+    return Credentials.search_saved_credential(accountName)
 
 def copy_cred(credential):
     '''Function to copy credential info into clipboard'''
@@ -179,10 +179,10 @@ def passlocker():
                             print("\n")
 
                     elif option == 'FC':
-                        platform_name = input("Enter Platform Name: ")
+                        search_val = input("Enter Platform Name: ")
                         print("\n")
-                        if verify_cred(platform_name):
-                            search = search_cred(platform_name)
+                        if verify_cred(search_val):
+                            search = search_cred(search_val)
                             print("Account Credentials Details")
                             print("***************************")
                             print(f"Platfrom Name: {search.accountName} \nAccount Username: {search.accountUsername} \nPassword: {search.accountPassword}")
