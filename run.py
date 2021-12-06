@@ -197,7 +197,6 @@ def passlocker():
                         print("\n")
                         if verify_cred(platform_name):
                             cred = copy_cred(platform_name)
-                            print("\n")
                             print("*****************************************")
                             print(f"Copied To Clipboard. Paste It Somewhere!")
                             print("*****************************************")
