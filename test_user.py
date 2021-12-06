@@ -7,8 +7,19 @@ class TestUser(unittest.TestCase):
         self.new_user = User("Steve", "12345")
 
     def test_init(self):
+        ''''method runs whenever we instanciate our class so every time we instanciate our class we create a user'''
         self.assertEqual(self.new_user.username, "Steve")
         self.assertEqual(self.new_user.password, "12345")
+
+    def tearDown(self):
+        '''run after every test to ensure user list never conflicts'''
+        User.user_list = []
+
+    def test_saveUser(self):
+        pass
+
+    def test_displayUser(self):
+        pass
 
 
 if __name__ == '__main__':
