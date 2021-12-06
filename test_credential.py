@@ -16,5 +16,10 @@ class TestCredential(unittest.TestCase):
         '''run after every test to ensure credential list never conflicts'''
         Credentials.credentials_list = []
 
+    def test_credential_save(self):
+        ''''we save credential then assert if it exist in  credential list'''
+        self.new_credential.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 1)
+
 if __name__ == "__main__":
     unittest.main()
