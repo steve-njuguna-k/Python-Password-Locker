@@ -39,7 +39,7 @@ class Credentials:
         for credential in cls.credentials_list:
             if credential.accountName == accountName:
                 return True
-            return False
+        return False
 
     @classmethod
     def search_saved_credential(cls, accountName):

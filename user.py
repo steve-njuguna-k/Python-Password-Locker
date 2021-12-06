@@ -11,10 +11,6 @@ class User:
         '''Function to store new user info into the user list'''
         User.user_list.append(self)
 
-    def delete_user(self):
-        '''Function to delete user info from the user list'''
-        User.user_list.remove(self)
-
     @classmethod
     def display_user(cls):
         '''Function to display user specific information'''
