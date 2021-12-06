@@ -22,6 +22,7 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(len(Credentials.credentials_list), 1)
     
     def test_display_credential(self):
+        '''test if display credential is working correctly'''
         new_credential = Credentials("IG", "STEVE", "12345")
         new_credential.save_credentials()
         self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
