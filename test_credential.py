@@ -12,5 +12,9 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(self.new_credential.accountUsername, "STEVE")
         self.assertEqual(self.new_credential.accountPassword, "12345")
 
+    def tearDown(self):
+        '''run after every test to ensure credential list never conflicts'''
+        Credentials.credentials_list = []
+
 if __name__ == "__main__":
     unittest.main()
