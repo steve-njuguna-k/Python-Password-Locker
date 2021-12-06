@@ -20,6 +20,11 @@ class TestCredential(unittest.TestCase):
         ''''we save credential then assert if it exist in  credential list'''
         self.new_credential.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 1)
+    
+    def test_display_credential(self):
+        new_credential = Credentials("IG", "STEVE", "12345")
+        new_credential.save_credentials()
+        self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
 
 if __name__ == "__main__":
     unittest.main()
